@@ -27,20 +27,32 @@ body {
 }
 
 /* =========================
-   LOADING SCREEN
+   INTRO
 ========================= */
 
 .intro {
     position: fixed;
     inset: 0;
     z-index: 9999;
+
     background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 30%),
-        linear-gradient(135deg, #f9dfe4, #fff7f7, #ead5dc);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.8),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f9dfe4,
+            #fff7f7,
+            #ead5dc
+        );
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+
     transition: 1.2s ease;
 }
 
@@ -74,14 +86,18 @@ body {
     border: 1px solid rgba(75,52,56,.35);
     background: rgba(255,255,255,.35);
     backdrop-filter: blur(10px);
+
     padding: 16px 35px;
     border-radius: 50px;
+
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
+
     color: #4b3438;
     cursor: pointer;
+
     transition: .4s;
 }
 
@@ -91,6 +107,7 @@ body {
     transform: translateY(-3px);
 }
 
+
 /* =========================
    PETALS
 ========================= */
@@ -98,18 +115,25 @@ body {
 .petal {
     position: fixed;
     top: -30px;
+
     width: 14px;
     height: 20px;
+
     background: rgba(230, 168, 182, .7);
     border-radius: 100% 0 100% 0;
+
     pointer-events: none;
     z-index: 50;
+
     animation: fall linear forwards;
 }
 
 @keyframes fall {
+
     0% {
-        transform: translateY(-50px) rotate(0deg);
+        transform:
+            translateY(-50px)
+            rotate(0deg);
         opacity: 0;
     }
 
@@ -126,45 +150,57 @@ body {
     }
 }
 
+
 /* =========================
    HERO
 ========================= */
 
 .hero {
     min-height: 100vh;
+
     position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 40px 20px;
+
     background:
         linear-gradient(
             rgba(255,248,248,.35),
             rgba(255,248,248,.75)
         ),
-        url("photo1.jpg") center/cover;
+        url("photo1.jpg.jpeg") center/cover;
 }
 
 .hero::after {
     content: "";
+
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        transparent 60%,
-        #fff8f8 100%
-    );
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 60%,
+            #fff8f8 100%
+        );
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+
     max-width: 900px;
+
     animation: heroAppear 2s ease;
 }
 
 @keyframes heroAppear {
+
     from {
         opacity: 0;
         transform: translateY(40px);
@@ -180,13 +216,21 @@ body {
     font-size: 12px;
     letter-spacing: 5px;
     text-transform: uppercase;
+
     margin-bottom: 25px;
+
     opacity: .7;
 }
 
 .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(65px, 13vw, 150px);
+
+    font-size: clamp(
+        65px,
+        13vw,
+        150px
+    );
+
     font-weight: 500;
     line-height: .75;
 }
@@ -198,10 +242,13 @@ body {
 
 .hero-description {
     margin-top: 40px;
+
     font-size: 14px;
     letter-spacing: 1px;
+
     opacity: .75;
 }
+
 
 /* =========================
    MUSIC
@@ -209,21 +256,31 @@ body {
 
 .music {
     position: fixed;
+
     right: 20px;
     top: 20px;
+
     z-index: 100;
 }
 
 .music button {
     width: 48px;
     height: 48px;
+
     border-radius: 50%;
+
     border: 1px solid rgba(75,52,56,.25);
+
     background: rgba(255,255,255,.6);
+
     backdrop-filter: blur(12px);
+
     cursor: pointer;
+
     color: #4b3438;
+
     font-size: 18px;
+
     transition: .3s;
 }
 
@@ -231,40 +288,61 @@ body {
     transform: scale(1.08);
 }
 
+
 /* =========================
    MESSAGE
 ========================= */
 
 .message {
     padding: 130px 25px;
+
     text-align: center;
+
     max-width: 900px;
+
     margin: auto;
 }
 
 .section-label {
     font-size: 11px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
+
     opacity: .5;
+
     margin-bottom: 25px;
 }
 
 .message h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 8vw, 90px);
+
+    font-size: clamp(
+        48px,
+        8vw,
+        90px
+    );
+
     font-weight: 500;
+
     line-height: .95;
+
     margin-bottom: 45px;
 }
 
 .message p {
     font-size: 16px;
+
     line-height: 2;
+
     max-width: 700px;
+
     margin: auto;
+
     opacity: .82;
 }
+
 
 /* =========================
    PHOTO GALLERY
@@ -274,40 +352,47 @@ body {
     padding: 60px 20px 130px;
 }
 
-.gallery-title {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(45px, 8vw, 80px);
-    font-weight: 500;
-    margin-bottom: 60px;
-}
-
 .gallery-grid {
     max-width: 1100px;
+
     margin: auto;
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 18px;
 }
 
 .photo {
     overflow: hidden;
+
     border-radius: 4px;
+
     position: relative;
 }
 
 .photo img {
     width: 100%;
     height: 100%;
+
     min-height: 420px;
+
     object-fit: cover;
+
     display: block;
+
     transition: 1s ease;
 }
 
 .photo:hover img {
     transform: scale(1.05);
 }
+
+
+/* =========================
+   PHOTO POSITIONS
+========================= */
 
 .photo:nth-child(2) {
     margin-top: 100px;
@@ -321,17 +406,31 @@ body {
     margin-top: 70px;
 }
 
+.photo:nth-child(5) {
+    margin-top: -20px;
+}
+
+.photo:nth-child(6) {
+    margin-top: 100px;
+}
+
+
 /* =========================
-   FINAL LETTER
+   FINAL
 ========================= */
 
 .final {
     min-height: 100vh;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 80px 25px;
+
     background: #ead5dc;
 }
 
@@ -341,24 +440,42 @@ body {
 
 .final h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(50px, 9vw, 100px);
+
+    font-size: clamp(
+        50px,
+        9vw,
+        100px
+    );
+
     font-weight: 500;
+
     line-height: .9;
+
     margin-bottom: 40px;
 }
 
 .final p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(23px, 4vw, 34px);
+
+    font-size: clamp(
+        23px,
+        4vw,
+        34px
+    );
+
     line-height: 1.5;
 }
 
 .signature {
     margin-top: 50px;
+
     font-family: 'Cormorant Garamond', serif;
+
     font-size: 28px;
+
     font-style: italic;
 }
+
 
 /* =========================
    SCROLL ANIMATION
@@ -366,14 +483,18 @@ body {
 
 .reveal {
     opacity: 0;
+
     transform: translateY(60px);
+
     transition: 1.2s ease;
 }
 
 .reveal.active {
     opacity: 1;
+
     transform: translateY(0);
 }
+
 
 /* =========================
    MOBILE
@@ -405,7 +526,9 @@ body {
 
     .photo:nth-child(2),
     .photo:nth-child(3),
-    .photo:nth-child(4) {
+    .photo:nth-child(4),
+    .photo:nth-child(5),
+    .photo:nth-child(6) {
         margin-top: 0;
     }
 
@@ -416,13 +539,23 @@ body {
     .final {
         min-height: 90vh;
     }
+
+    .music {
+        right: 15px;
+        top: 15px;
+    }
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- INTRO -->
+
+<!-- =========================
+     INTRO
+========================= -->
+
 <div class="intro" id="intro">
 
     <div class="intro-content">
@@ -436,7 +569,10 @@ body {
             тебя 🤍
         </h1>
 
-        <button class="open-btn" onclick="openCard()">
+        <button
+            class="open-btn"
+            onclick="openCard()"
+        >
             Открыть
         </button>
 
@@ -445,21 +581,35 @@ body {
 </div>
 
 
-<!-- MUSIC -->
+<!-- =========================
+     MUSIC
+========================= -->
+
 <div class="music">
 
-    <button onclick="toggleMusic()" id="musicButton">
+    <button
+        onclick="toggleMusic()"
+        id="musicButton"
+    >
         ♫
     </button>
 
 </div>
 
 <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
 </audio>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
     <div class="hero-content">
@@ -483,7 +633,10 @@ body {
 </section>
 
 
-<!-- MESSAGE -->
+<!-- =========================
+     MESSAGE
+========================= -->
+
 <section class="message reveal">
 
     <div class="section-label">
@@ -496,44 +649,72 @@ body {
     </h2>
 
     <p>
+
         Иногда очень сложно подобрать слова человеку,
         который значит для тебя так много.
         Но сегодня мне хочется сказать тебе самое главное:
         я безумно счастлива, что именно ты — моя сестра.
+
         <br><br>
 
         Спасибо тебе за все наши воспоминания,
         за смех, разговоры, поддержку и даже
         за те моменты, которые мы когда-то не понимали,
         но теперь вспоминаем с улыбкой.
+
     </p>
 
 </section>
 
 
-<!-- GALLERY -->
-<section class="gallery">
+<!-- =========================
+     PHOTOS
+========================= -->
 
-    <h2 class="gallery-title reveal">
-        Наши моменты
-    </h2>
+<section class="gallery">
 
     <div class="gallery-grid">
 
         <div class="photo reveal">
-            <img src="photo1.jpg" alt="Фото">
+            <img
+                src="photo1.jpg.jpeg"
+                alt=""
+            >
         </div>
 
         <div class="photo reveal">
-            <img src="photo2.jpg" alt="Фото">
+            <img
+                src="photo2.jpg.jpeg"
+                alt=""
+            >
         </div>
 
         <div class="photo reveal">
-            <img src="photo3.jpg" alt="Фото">
+            <img
+                src="photo3.jpg.jpeg"
+                alt=""
+            >
         </div>
 
         <div class="photo reveal">
-            <img src="photo4.jpg" alt="Фото">
+            <img
+                src="photo4.jpg.jpeg"
+                alt=""
+            >
+        </div>
+
+        <div class="photo reveal">
+            <img
+                src="photo5.jpg.jpeg"
+                alt=""
+            >
+        </div>
+
+        <div class="photo reveal">
+            <img
+                src="photo6.jpg.jpeg"
+                alt=""
+            >
         </div>
 
     </div>
@@ -541,7 +722,10 @@ body {
 </section>
 
 
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
+
 <section class="final">
 
     <div class="final-content reveal">
@@ -556,23 +740,28 @@ body {
         </h2>
 
         <p>
+
             Чтобы у тебя всегда были люди,
             рядом с которыми можно быть собой.
             Чтобы глаза всегда светились,
             мечты становились реальностью,
             а впереди было гораздо больше
             счастливых дней, чем грустных.
+
             <br><br>
 
             Никогда не забывай,
             какая ты прекрасная.
             И знай — что бы ни случилось,
             у тебя всегда есть я. 🤍
+
         </p>
 
         <div class="signature">
+
             С любовью,<br>
             твоя сестра ♡
+
         </div>
 
     </div>
@@ -582,22 +771,37 @@ body {
 
 <script>
 
+
 /* =========================
    OPEN CARD
 ========================= */
 
 function openCard() {
 
-    const intro = document.getElementById("intro");
-    const music = document.getElementById("music");
+    const intro =
+        document.getElementById("intro");
+
+    const music =
+        document.getElementById("music");
 
     intro.classList.add("hide");
 
     music.play().then(() => {
 
-        document.getElementById("musicButton").innerHTML = "Ⅱ";
+        document.getElementById(
+            "musicButton"
+        ).innerHTML = "Ⅱ";
 
-    }).catch(() => {});
+        playing = true;
+
+    }).catch(() => {
+
+        /* Safari может заблокировать
+           автоматическое воспроизведение.
+           Тогда музыку можно включить
+           кнопкой справа сверху. */
+
+    });
 
 }
 
@@ -610,19 +814,27 @@ let playing = false;
 
 function toggleMusic() {
 
-    const music = document.getElementById("music");
-    const button = document.getElementById("musicButton");
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
 
     if (playing) {
 
         music.pause();
+
         button.innerHTML = "♫";
+
         playing = false;
 
     } else {
 
         music.play();
+
         button.innerHTML = "Ⅱ";
+
         playing = true;
 
     }
@@ -636,11 +848,13 @@ function toggleMusic() {
 
 function createPetal() {
 
-    const petal = document.createElement("div");
+    const petal =
+        document.createElement("div");
 
     petal.classList.add("petal");
 
-    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.left =
+        Math.random() * 100 + "vw";
 
     petal.style.animationDuration =
         (5 + Math.random() * 6) + "s";
@@ -668,18 +882,25 @@ setInterval(createPetal, 450);
    SCROLL REVEAL
 ========================= */
 
-const reveals = document.querySelectorAll(".reveal");
+const reveals =
+    document.querySelectorAll(".reveal");
+
 
 function revealElements() {
 
     reveals.forEach(element => {
 
-        const windowHeight = window.innerHeight;
+        const windowHeight =
+            window.innerHeight;
 
         const elementTop =
             element.getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - 100) {
+
+        if (
+            elementTop <
+            windowHeight - 100
+        ) {
 
             element.classList.add("active");
 
@@ -689,11 +910,17 @@ function revealElements() {
 
 }
 
-window.addEventListener("scroll", revealElements);
+
+window.addEventListener(
+    "scroll",
+    revealElements
+);
 
 revealElements();
+
 
 </script>
 
 </body>
 </html>
+       
