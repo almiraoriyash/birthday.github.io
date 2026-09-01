@@ -3,38 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Для моей любимой сестры 🤍</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     background: #fff8f8;
     color: #4b3438;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
-
-/* =========================
-   INTRO
-========================= */
-
+/* INTRO */
 .intro {
     position: fixed;
     inset: 0;
     z-index: 9999;
-
     background:
         radial-gradient(
             circle at 20% 20%,
@@ -47,25 +37,20 @@ body {
             #fff7f7,
             #ead5dc
         );
-
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
     transition: 1.2s ease;
 }
-
 .intro.hide {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-
 .intro-content {
     padding: 30px;
 }
-
 .intro-small {
     font-size: 12px;
     letter-spacing: 4px;
@@ -73,7 +58,6 @@ body {
     opacity: .65;
     margin-bottom: 20px;
 }
-
 .intro h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(48px, 12vw, 100px);
@@ -81,66 +65,45 @@ body {
     line-height: .9;
     margin-bottom: 30px;
 }
-
 .open-btn {
     border: 1px solid rgba(75,52,56,.35);
     background: rgba(255,255,255,.35);
     backdrop-filter: blur(10px);
-
     padding: 16px 35px;
     border-radius: 50px;
-
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-
     color: #4b3438;
     cursor: pointer;
-
     transition: .4s;
 }
-
 .open-btn:hover {
     background: #4b3438;
     color: white;
     transform: translateY(-3px);
 }
-
-
-/* =========================
-   PETALS
-========================= */
-
+/* PETALS */
 .petal {
     position: fixed;
     top: -30px;
-
     width: 14px;
     height: 20px;
-
     background: rgba(230, 168, 182, .7);
     border-radius: 100% 0 100% 0;
-
     pointer-events: none;
     z-index: 50;
-
     animation: fall linear forwards;
 }
-
 @keyframes fall {
-
     0% {
-        transform:
-            translateY(-50px)
-            rotate(0deg);
+        transform: translateY(-50px) rotate(0deg);
         opacity: 0;
     }
-
     10% {
         opacity: .8;
     }
-
     100% {
         transform:
             translateY(110vh)
@@ -149,39 +112,26 @@ body {
         opacity: 0;
     }
 }
-
-
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero {
     min-height: 100vh;
-
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     padding: 40px 20px;
-
     background:
         linear-gradient(
             rgba(255,248,248,.35),
             rgba(255,248,248,.75)
         ),
-        url("photo1.jpg.jpeg") center/cover;
+        url("./photo1.jpg.jpeg") center/cover no-repeat;
 }
-
 .hero::after {
     content: "";
-
     position: absolute;
     inset: 0;
-
     background:
         linear-gradient(
             to bottom,
@@ -189,341 +139,197 @@ body {
             #fff8f8 100%
         );
 }
-
 .hero-content {
     position: relative;
     z-index: 2;
-
     max-width: 900px;
-
     animation: heroAppear 2s ease;
 }
-
 @keyframes heroAppear {
-
     from {
         opacity: 0;
         transform: translateY(40px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 .hero-subtitle {
     font-size: 12px;
     letter-spacing: 5px;
     text-transform: uppercase;
-
     margin-bottom: 25px;
-
     opacity: .7;
 }
-
 .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(
-        65px,
-        13vw,
-        150px
-    );
-
+    font-size: clamp(65px, 13vw, 150px);
     font-weight: 500;
     line-height: .75;
 }
-
 .hero h1 span {
     display: block;
     font-style: italic;
 }
-
 .hero-description {
     margin-top: 40px;
-
     font-size: 14px;
     letter-spacing: 1px;
-
     opacity: .75;
 }
-
-
-/* =========================
-   MUSIC
-========================= */
-
+/* MUSIC */
 .music {
     position: fixed;
-
     right: 20px;
     top: 20px;
-
     z-index: 100;
 }
-
 .music button {
     width: 48px;
     height: 48px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(75,52,56,.25);
-
     background: rgba(255,255,255,.6);
-
     backdrop-filter: blur(12px);
-
     cursor: pointer;
-
     color: #4b3438;
-
     font-size: 18px;
-
     transition: .3s;
 }
-
 .music button:hover {
     transform: scale(1.08);
 }
-
-
-/* =========================
-   MESSAGE
-========================= */
-
+/* MESSAGE */
 .message {
     padding: 130px 25px;
-
     text-align: center;
-
     max-width: 900px;
-
     margin: auto;
 }
-
 .section-label {
     font-size: 11px;
-
     letter-spacing: 4px;
-
     text-transform: uppercase;
-
     opacity: .5;
-
     margin-bottom: 25px;
 }
-
 .message h2 {
     font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(
-        48px,
-        8vw,
-        90px
-    );
-
+    font-size: clamp(48px, 8vw, 90px);
     font-weight: 500;
-
     line-height: .95;
-
     margin-bottom: 45px;
 }
-
 .message p {
     font-size: 16px;
-
     line-height: 2;
-
     max-width: 700px;
-
     margin: auto;
-
     opacity: .82;
 }
-
-
-/* =========================
-   PHOTO GALLERY
-========================= */
-
+/* PHOTO GALLERY */
 .gallery {
     padding: 60px 20px 130px;
 }
-
 .gallery-grid {
     max-width: 1100px;
-
     margin: auto;
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 18px;
 }
-
 .photo {
     overflow: hidden;
-
     border-radius: 4px;
-
     position: relative;
 }
-
 .photo img {
     width: 100%;
     height: 100%;
-
     min-height: 420px;
-
     object-fit: cover;
-
     display: block;
-
     transition: 1s ease;
 }
-
 .photo:hover img {
     transform: scale(1.05);
 }
-
-
-/* =========================
-   PHOTO POSITIONS
-========================= */
-
 .photo:nth-child(2) {
     margin-top: 100px;
 }
-
 .photo:nth-child(3) {
     margin-top: -30px;
 }
-
 .photo:nth-child(4) {
     margin-top: 70px;
 }
-
 .photo:nth-child(5) {
     margin-top: -20px;
 }
-
 .photo:nth-child(6) {
     margin-top: 100px;
 }
-
-
-/* =========================
-   FINAL
-========================= */
-
+/* FINAL */
 .final {
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     padding: 80px 25px;
-
     background: #ead5dc;
 }
-
 .final-content {
     max-width: 850px;
 }
-
 .final h2 {
     font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(
-        50px,
-        9vw,
-        100px
-    );
-
+    font-size: clamp(50px, 9vw, 100px);
     font-weight: 500;
-
     line-height: .9;
-
     margin-bottom: 40px;
 }
-
 .final p {
     font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(
-        23px,
-        4vw,
-        34px
-    );
-
+    font-size: clamp(23px, 4vw, 34px);
     line-height: 1.5;
 }
-
 .signature {
     margin-top: 50px;
-
     font-family: 'Cormorant Garamond', serif;
-
     font-size: 28px;
-
     font-style: italic;
 }
-
-
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
+/* SCROLL ANIMATION */
 .reveal {
     opacity: 0;
-
     transform: translateY(60px);
-
     transition: 1.2s ease;
 }
-
 .reveal.active {
     opacity: 1;
-
     transform: translateY(0);
 }
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media (max-width: 700px) {
-
     .hero {
         min-height: 100svh;
     }
-
     .hero h1 {
         font-size: 75px;
     }
-
     .message {
         padding: 100px 22px;
     }
-
     .message p {
         font-size: 14px;
         line-height: 1.9;
     }
-
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-
     .photo:nth-child(2),
     .photo:nth-child(3),
     .photo:nth-child(4),
@@ -531,15 +337,12 @@ body {
     .photo:nth-child(6) {
         margin-top: 0;
     }
-
     .photo img {
         min-height: 500px;
     }
-
     .final {
         min-height: 90vh;
     }
-
     .music {
         right: 15px;
         top: 15px;
@@ -547,380 +350,201 @@ body {
 }
 </style>
 </head>
-
-
 <body>
-
-
-<!-- =========================
-     INTRO
-========================= -->
-
+<!-- INTRO -->
 <div class="intro" id="intro">
-
     <div class="intro-content">
-
         <div class="intro-small">
             маленькое послание для тебя
         </div>
-
         <h1>
             Для<br>
             тебя 🤍
         </h1>
-
         <button
             class="open-btn"
             onclick="openCard()"
         >
             Открыть
         </button>
-
     </div>
-
 </div>
-
-
-<!-- =========================
-     MUSIC
-========================= -->
-
+<!-- MUSIC -->
 <div class="music">
-
     <button
         onclick="toggleMusic()"
         id="musicButton"
+        aria-label="Музыка"
     >
         ♫
     </button>
-
 </div>
-
-<audio id="music" loop>
-
-    <source
-        src="music.mp3"
-        type="audio/mpeg"
-    >
-
+<audio id="music" loop preload="auto">
+    <source src="./music.mp3" type="audio/mpeg">
 </audio>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
+<!-- HERO -->
 <section class="hero">
-
     <div class="hero-content">
-
         <div class="hero-subtitle">
             моей любимой сестре
         </div>
-
         <h1>
             С днём
             <span>рождения</span>
         </h1>
-
         <div class="hero-description">
             Сегодня всё немного красивее,
             потому что этот день — твой.
         </div>
-
     </div>
-
 </section>
-
-
-<!-- =========================
-     MESSAGE
-========================= -->
-
+<!-- MESSAGE -->
 <section class="message reveal">
-
     <div class="section-label">
         от всего сердца
     </div>
-
     <h2>
         Ты — больше,<br>
         чем просто сестра.
     </h2>
-
     <p>
-
         Иногда очень сложно подобрать слова человеку,
         который значит для тебя так много.
         Но сегодня мне хочется сказать тебе самое главное:
         я безумно счастлива, что именно ты — моя сестра.
-
         <br><br>
-
         Спасибо тебе за все наши воспоминания,
         за смех, разговоры, поддержку и даже
         за те моменты, которые мы когда-то не понимали,
         но теперь вспоминаем с улыбкой.
-
     </p>
-
 </section>
-
-
-<!-- =========================
-     PHOTOS
-========================= -->
-
+<!-- PHOTOS -->
 <section class="gallery">
-
     <div class="gallery-grid">
-
         <div class="photo reveal">
-            <img
-                src="photo1.jpg.jpeg"
-                alt=""
-            >
+            <img src="./photo1.jpg.jpeg" alt="Фото 1">
         </div>
-
         <div class="photo reveal">
-            <img
-                src="photo2.jpg.jpeg"
-                alt=""
-            >
+            <img src="./photo2.jpg.jpeg" alt="Фото 2">
         </div>
-
         <div class="photo reveal">
-            <img
-                src="photo3.jpg.jpeg"
-                alt=""
-            >
+            <img src="./photo3.jpg.jpeg" alt="Фото 3">
         </div>
-
         <div class="photo reveal">
-            <img
-                src="photo4.jpg.jpeg"
-                alt=""
-            >
+            <img src="./photo4.jpg.jpeg" alt="Фото 4">
         </div>
-
         <div class="photo reveal">
-            <img
-                src="photo5.jpg.jpeg"
-                alt=""
-            >
+            <img src="./photo5.jpg.jpeg" alt="Фото 5">
         </div>
-
         <div class="photo reveal">
-            <img
-                src="photo6.jpg.jpeg"
-                alt=""
-            >
+            <img src="./photo6.jpg.jpeg" alt="Фото 6">
         </div>
-
     </div>
-
 </section>
-
-
-<!-- =========================
-     FINAL
-========================= -->
-
+<!-- FINAL -->
 <section class="final">
-
     <div class="final-content reveal">
-
         <div class="section-label">
             и напоследок...
         </div>
-
         <h2>
             Я хочу, чтобы
             ты была счастлива.
         </h2>
-
         <p>
-
             Чтобы у тебя всегда были люди,
             рядом с которыми можно быть собой.
             Чтобы глаза всегда светились,
             мечты становились реальностью,
             а впереди было гораздо больше
             счастливых дней, чем грустных.
-
             <br><br>
-
             Никогда не забывай,
             какая ты прекрасная.
             И знай — что бы ни случилось,
             у тебя всегда есть я. 🤍
-
         </p>
-
         <div class="signature">
-
             С любовью,<br>
             твоя сестра ♡
-
         </div>
-
     </div>
-
 </section>
-
-
 <script>
-
-
-/* =========================
-   OPEN CARD
-========================= */
-
-function openCard() {
-
-    const intro =
-        document.getElementById("intro");
-
-    const music =
-        document.getElementById("music");
-
-    intro.classList.add("hide");
-
-    music.play().then(() => {
-
-        document.getElementById(
-            "musicButton"
-        ).innerHTML = "Ⅱ";
-
-        playing = true;
-
-    }).catch(() => {
-
-        /* Safari может заблокировать
-           автоматическое воспроизведение.
-           Тогда музыку можно включить
-           кнопкой справа сверху. */
-
-    });
-
-}
-
-
-/* =========================
-   MUSIC
-========================= */
-
 let playing = false;
-
-function toggleMusic() {
-
-    const music =
-        document.getElementById("music");
-
-    const button =
-        document.getElementById("musicButton");
-
-
-    if (playing) {
-
-        music.pause();
-
-        button.innerHTML = "♫";
-
-        playing = false;
-
-    } else {
-
-        music.play();
-
-        button.innerHTML = "Ⅱ";
-
-        playing = true;
-
-    }
-
+/* OPEN CARD */
+function openCard() {
+    const intro = document.getElementById("intro");
+    const music = document.getElementById("music");
+    const button = document.getElementById("musicButton");
+    intro.classList.add("hide");
+    music.play()
+        .then(() => {
+            playing = true;
+            button.innerHTML = "Ⅱ";
+        })
+        .catch(() => {
+            playing = false;
+            button.innerHTML = "♫";
+        });
 }
-
-
-/* =========================
-   PETALS
-========================= */
-
+/* MUSIC */
+function toggleMusic() {
+    const music = document.getElementById("music");
+    const button = document.getElementById("musicButton");
+    if (music.paused) {
+        music.play()
+            .then(() => {
+                playing = true;
+                button.innerHTML = "Ⅱ";
+            })
+            .catch(() => {
+                playing = false;
+            });
+    } else {
+        music.pause();
+        playing = false;
+        button.innerHTML = "♫";
+    }
+}
+/* PETALS */
 function createPetal() {
-
-    const petal =
-        document.createElement("div");
-
+    const petal = document.createElement("div");
     petal.classList.add("petal");
-
     petal.style.left =
         Math.random() * 100 + "vw";
-
     petal.style.animationDuration =
         (5 + Math.random() * 6) + "s";
-
     petal.style.transform =
         `rotate(${Math.random() * 360}deg)`;
-
     petal.style.opacity =
         0.3 + Math.random() * 0.6;
-
     document.body.appendChild(petal);
-
     setTimeout(() => {
-
         petal.remove();
-
     }, 12000);
-
 }
-
 setInterval(createPetal, 450);
-
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-
+/* SCROLL REVEAL */
 const reveals =
     document.querySelectorAll(".reveal");
-
-
 function revealElements() {
-
     reveals.forEach(element => {
-
         const windowHeight =
             window.innerHeight;
-
         const elementTop =
             element.getBoundingClientRect().top;
-
-
-        if (
-            elementTop <
-            windowHeight - 100
-        ) {
-
+        if (elementTop < windowHeight - 100) {
             element.classList.add("active");
-
         }
-
     });
-
 }
-
-
 window.addEventListener(
     "scroll",
     revealElements
 );
-
 revealElements();
-
-
 </script>
-
 </body>
 </html>
-       
